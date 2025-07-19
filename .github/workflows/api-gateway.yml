@@ -21,7 +21,7 @@ jobs:
 
       - name: Build API Gateway Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest ./api-gateway
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest .
 
       - name: Push image to Docker Hub
         run: |
