@@ -45,4 +45,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest
             docker stop api-gateway || true
             docker rm api-gateway || true
-            docker run -d --name api-gateway -p 80:80 ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest
+            docker run -d --name api-gateway -p 80:80 --restart unless-stopped ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest
